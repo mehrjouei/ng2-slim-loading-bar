@@ -13,11 +13,10 @@ import { isPresent } from './slim-loading-bar.utils';
 @Component({
     selector: 'ng2-slim-loading-bar',
     changeDetection: ChangeDetectionStrategy.OnPush,
-    template: `
-<div class="slim-loading-bar">
-    <div class="slim-loading-bar-progress" [style.width]="progress + '%'" [style.backgroundColor]="color" [style.color]="color"
-        [style.height]="height" [style.opacity]="show ? '1' : '0'" [style.transition]="isTransition"></div>
-</div>`
+    template:
+                     `<div [style.display]="show ? 'block' : 'none'"  id="gray_bg"><div class="slim-loading-bar">
+                     <div class="slim-loading-bar-progress" [style.width]="progress + '%'" [style.backgroundColor]="color" [style.color]="color"  [style.height]="height" [style.display]="show ? 'block' : 'none'"></div>
+                    <img style="position:fixed;left:10px;bottom:30px;" src="/assets/images/loading.gif" /></div></div>`
 })
 export class SlimLoadingBarComponent implements OnInit, AfterViewInit {
 
